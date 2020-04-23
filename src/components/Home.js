@@ -20,6 +20,7 @@ article{
 `
 
 const Home = () => {
+
     return(
         <HomePage>
         <img src={img}></img>
