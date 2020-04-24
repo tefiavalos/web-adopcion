@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Card = (props) => {
-    console.log(props.imagen);
     return (
         <div>
             <a href="/">
