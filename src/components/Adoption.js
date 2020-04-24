@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Card from './Card';
 
 const Adoption = ({ gatos }) => {
-  console.log(gatos[0])
   const [sexo, setSexo] = useState('');
   const [age, setAge] = useState(0);
   const [gatosBuscados, setGatosBuscados] = useState(gatos);

@@ -4,7 +4,7 @@ const Details = (props) => {
     const [fullName, setFullName] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
-
+    console.log(props)
     const handleSubmit = (e) => {
         e.preventDefault();
 
