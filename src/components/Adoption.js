@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Card from './Card';
 
-const Adoption = ({gatos}) => {
+const Adoption = ({ gatos }) => {
+  console.log(gatos[0])
   const [sexo, setSexo] = useState('');
   const [age, setAge] = useState(0);
   const [gatosBuscados, setGatosBuscados] = useState(gatos);
-  console.log(gatos)
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -41,7 +42,14 @@ const Adoption = ({gatos}) => {
         <button type="submit">Buscar</button>
       </form>
       {gatosBuscados.length !== 0 ? gatosBuscados.map((gato, index) => {
-        return <Card textoBoton={gato.name} key={index} imagen={gato.photos[0].medium} />
+        return (
+          <Card
+            textoBoton={gato.name}
+            infoGato={gato}
+            key={index}
+            imagen={gato.photos[0].medium}
+          />
+        )
       }) : <h1>Busca tu gatito de preferencia</h1>}
     </>
   )
