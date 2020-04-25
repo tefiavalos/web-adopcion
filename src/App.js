@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import Nav from './components/Nav.js';
 import Adoption from './components/Adoption.js';
-import Shop from './components/Shop.js';
 import Home from './components/Home.js'
+import Details from './components/Details'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 function App() {
@@ -63,7 +63,8 @@ function App() {
         <Switch>
           <Route exact path="/" component={() => <Home gatitosFiltrados={gatitosFiltrados} />}></Route>
           <Route path="/adoption" component={() => <Adoption gatos={gatos} />}></Route>
-          <Route path="/shop" component={Shop}></Route>
+          <Route path="/details/:id" component={Details}></Route>
+          {/* <Route path="/details/:id" component={() => <Details gatos={gatos}></Details>}></Route> */}
         </Switch>
       </Router>
     </>
