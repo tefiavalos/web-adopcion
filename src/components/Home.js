@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import img from '../assets/ipapate.jpg';
 import styled from 'styled-components';
+import '/App.css';
 
 
 const HomePage = styled.section`
 display: flex;
 background-color: black;
 color: #eee;
-font-family: montserrat;
+font-family: font-family: 'Baloo Tamma 2';
 img{
     width: 40%;
     height: auto;
