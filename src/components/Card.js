@@ -1,15 +1,17 @@
 import React from 'react';
+import { Link, Switch, Route } from 'react-router-dom';
+import Details from './Details'
 
 const Card = (props) => {
-    console.log(props.imagen);
     return (
         <div>
-            <a href="/">
+            <Link to='/details/1'>
                 <img src={props.imagen} alt=""></img>
                 <div>
                     <span>{props.textoBoton}</span>
                 </div>
-            </a>
+            </Link>
+
         </div>
     )
 };

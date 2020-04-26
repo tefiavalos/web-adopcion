@@ -1,15 +1,16 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Nav from './components/Nav.js';
 import Adoption from './components/Adoption.js';
-import Shop from './components/Shop.js';
 import Home from './components/Home.js'
+import Details from './components/Details'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 function App() {
   const [gatitosFiltrados, setGatitosFiltrados] = useState([]);
-  // Esto lo comentamos porque al final vamos a hacer esta parte de la adopción de otra manera, pero lo vamos a ne
+  const [gatos, setGatos] = useState([]);
 
+  // Esto lo comentamos porque al final vamos a hacer esta parte de la adopción de otra manera, pero lo vamos a ne
   useEffect(() => {
     // Armamos el objeto con la información que pide el endpoint de la generación del token. Los datos
     // lo sacamos de la información de la página y Pieri obtuvo la info de client_id  client_
@@ -48,21 +49,22 @@ function App() {
             for (let i = 0; i < 3; i++) {
               tresAnimales[i] = animalesConFoto[i];
             }
-            //console.log(tresAnimales);
+
+            setGatos(animalesConFoto);
             setGatitosFiltrados(tresAnimales);
           })
       })
   }, []);
-
 
   return (
     <>
       <Router>
         <Nav />
         <Switch>
-          <Route exact path="/" component={() => <Home gatitosFiltrados={gatitosFiltrados}/>}></Route>
-          <Route path="/adoption" component={Adoption}></Route>
-          <Route path="/shop" component={Shop}></Route>
+          <Route exact path="/" component={() => <Home gatitosFiltrados={gatitosFiltrados} />}></Route>
+          <Route path="/adoption" component={() => <Adoption gatos={gatos} />}></Route>
+          <Route path="/details/:id" component={Details}></Route>
+          {/* <Route path="/details/:id" component={() => <Details gatos={gatos}></Details>}></Route> */}
         </Switch>
       </Router>
     </>
