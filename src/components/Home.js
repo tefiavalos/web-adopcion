@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import img from '../assets/ipa4.jpg';
 import styled from 'styled-components';
 import Card from './Card';
@@ -24,21 +24,28 @@ h1{
     color: #eee;
 }
 `
-
+const MainPage = styled.div`
+display:flex;
+`
+const H1 = styled.h1`
+color: #eee;
+`
 const Home = ({ gatitosFiltrados }) => {
 
     return (
         <>
             <HomePage>
-                <img className="img-home" src={img}></img>
+                <img className="img-home" alt="foto de gatito" src={img}></img>
                 <article><p>Ipa es una gatita rescatada. Fue rescatada por dos personas que vieron como la tiraban
                 desde un auto adentro de una bolsa. Le dieron lugar, la cuidaron, y finalmente fue adoptada
                 por una pareja. Hoy el unico recuerdo de ese mal momento es el colmillo que le queda afuera por
             tener la mandibula fracturada.</p></article>
             </HomePage>
-            {gatitosFiltrados.length !== 0 ? gatitosFiltrados.map((gato, index) => {
-                return <Card textoBoton={gato.name} key={index} imagen={gato.photos[0].medium} />
-            }) : <h1>Cargando gatitos...</h1>}
+            <MainPage>
+                {gatitosFiltrados.length !== 0 ? gatitosFiltrados.map((gato, index) => {
+                    return <Card textoBoton={gato.name} id={gato.id} key={index} imagen={gato.photos[0].medium} />
+                }) : <H1>Cargando gatitos...</H1>}
+            </MainPage>
         </>
     )
 }

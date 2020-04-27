@@ -62,9 +62,8 @@ function App() {
         <Nav />
         <Switch>
           <Route exact path="/" component={() => <Home gatitosFiltrados={gatitosFiltrados} />}></Route>
-          <Route path="/adoption" component={() => <Adoption gatos={gatos} />}></Route>
-          <Route path="/details/:id" component={Details}></Route>
-          {/* <Route path="/details/:id" component={() => <Details gatos={gatos}></Details>}></Route> */}
+          <Route exact path="/adoption" component={() => <Adoption gatos={gatos} />}></Route>
+          <Route exact path="/details/:id" component={Details}></Route>
         </Switch>
       </Router>
     </>

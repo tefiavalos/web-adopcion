@@ -25,11 +25,10 @@ const ButtonStyled = styled.button`
   background-color: #4D4D4D;
   border-radius: 6px;
   border: 2px solid #4D4D4D;
-}
 :hover{
   color: #4D4D4D;
   background-color: #eee;
-  
+
 }
 `
 
@@ -37,9 +36,6 @@ const DivCard = styled.div`
 display: flex;
 flex-direction: row;
 `
-
-
-
 
 const Adoption = ({ gatos }) => {
   const [sexo, setSexo] = useState('');
@@ -78,12 +74,13 @@ const Adoption = ({ gatos }) => {
           <input type="radio" name="edad" value="Baby" />Bebe
           <input type="radio" name="edad" value="Adult" />Adulto
         </div>
-        <ButtonStyled clasName="boton" type="submit">Buscar</ButtonStyled>
+        <ButtonStyled className="boton" type="submit">Buscar</ButtonStyled>
       </form>
       {gatosBuscados.length !== 0 ? gatosBuscados.map((gato, index) => {
         return (
-          <DivCard className="divcard">
+          <DivCard className="divcard" key={index}>
           <Card
+            id={gato.id}
             textoBoton={gato.name}
             infoGato={gato}
             key={index}
@@ -92,7 +89,7 @@ const Adoption = ({ gatos }) => {
           </DivCard>
         )
       }) : <h1>Busca tu gatito de preferencia</h1>}
-      
+
     </AdoptionStyle>
   )
 }

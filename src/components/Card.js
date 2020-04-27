@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link, Switch, Route } from 'react-router-dom';
-import Details from './Details';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import imgArticle from '../assets/fondo.jpg';
 
@@ -26,15 +25,15 @@ img{
 `
 
 const Card = (props) => {
+
     return (
         <CardStyle>
-            <Link className="link" to='/details/1'>
+            <Link className="link" to={`/details/${props.id}`}>
                 <img src={props.imagen} alt=""></img>
                 <div>
                     <span>{props.textoBoton}</span>
                 </div>
             </Link>
-
         </CardStyle>
     )
 };

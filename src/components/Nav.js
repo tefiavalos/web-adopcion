@@ -32,7 +32,7 @@ const Nav = () => {
         <NavSection>
             <h1>IpaLoca</h1>
             <Link className="link" to="/">Home</Link>
-            <Link className="link" to="/Adoption">Adoption</Link>
+            <Link className="link" to="/adoption">Adoption</Link>
         </NavSection>
     )
 
