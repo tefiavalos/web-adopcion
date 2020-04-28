@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import Button from './Button';
 
 const DIV = styled.div`
 color: white;
@@ -77,8 +78,10 @@ console.log(gatoSeleccionado)
           <hr></hr>
           <img className="" alt="foto de gatito" src={gatoSeleccionado.photos[0].small}></img>
           <hr></hr>
-          <span>{gatoSeleccionado.breeds.primary}</span>
-          <span>{gatoSeleccionado.age + " - " + gatoSeleccionado.gender + " - " + gatoSeleccionado.size + " - " + gatoSeleccionado.colors.primary } </span>
+          <p>{gatoSeleccionado.breeds.primary}</p>
+          <p>{gatoSeleccionado.age + " - " + gatoSeleccionado.gender + " - " + gatoSeleccionado.size + " - " 
+          + gatoSeleccionado.colors.primary + "-" + (gatoSeleccionado.colors.secondary != null ? gatoSeleccionado.colors.secondary : "")} </p>
+          <p>{gatoSeleccionado.description}</p>
         </div>
         : <h1>Obteniendo información del gatito</h1>}
       <h1>Comunicate con el refugio</h1>
@@ -92,7 +95,7 @@ console.log(gatoSeleccionado)
         <label htmlFor="phone">Telefono</label>
         <input name="phone" id="phone" onChange={handleChangePhone} value={phone}></input>
 
-        <button type="submit">Enviar</button>
+        <Button boton="Enviar"/>
       </form>
 
     </DIV>

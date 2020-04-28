@@ -30,7 +30,7 @@ box-shadow: inset -2px -1px 46px -13px rgba(71,66,66,1);
 const Nav = () => {
     return (
         <NavSection>
-            <h1>IpaLoca</h1>
+            <Link className="link" to="/">IpaLoca</Link>
             <Link className="link" to="/">Home</Link>
             <Link className="link" to="/adoption">Adoption</Link>
         </NavSection>

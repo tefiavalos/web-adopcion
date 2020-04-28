@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Card from './Card';
 import styled from 'styled-components';
+import Button from './Button';
 
 const AdoptionStyle = styled.section`
 display:flex;
@@ -15,22 +16,7 @@ form{
 }
 `
 
-const ButtonStyled = styled.button`
-  text-decoration: none;
-  font-family: 'Baloo Tamma 2';
-  padding: 5px 10px;
-  font-weight: 600;
-  font-size: 15px;
-  color: #eee;
-  background-color: #4D4D4D;
-  border-radius: 6px;
-  border: 2px solid #4D4D4D;
-:hover{
-  color: #4D4D4D;
-  background-color: #eee;
 
-}
-`
 
 const DivCard = styled.div`
 display: flex;
@@ -74,7 +60,7 @@ const Adoption = ({ gatos }) => {
           <input type="radio" name="edad" value="Baby" />Bebe
           <input type="radio" name="edad" value="Adult" />Adulto
         </div>
-        <ButtonStyled className="boton" type="submit">Buscar</ButtonStyled>
+        <Button boton="Buscar"/>
       </form>
       {gatosBuscados.length !== 0 ? gatosBuscados.map((gato, index) => {
         return (

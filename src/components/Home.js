@@ -3,6 +3,7 @@ import img from '../assets/ipa4.jpg';
 import styled from 'styled-components';
 import Card from './Card';
 import imgArticle from '../assets/fondo.jpg';
+import { Link } from 'react-router-dom';
 
 const HomePage = styled.section`
 display: flex;
@@ -42,9 +43,14 @@ const Home = ({ gatitosFiltrados }) => {
             tener la mandibula fracturada.</p></article>
             </HomePage>
             <MainPage>
-                {gatitosFiltrados.length !== 0 ? gatitosFiltrados.map((gato, index) => {
-                    return <Card textoBoton={gato.name} id={gato.id} key={index} imagen={gato.photos[0].medium} />
-                }) : <H1>Cargando gatitos...</H1>}
+                {gatitosFiltrados.length !== 0 ? (
+                <>
+                {gatitosFiltrados.map((gato, index) => {
+                    return <Card textoBoton={gato.name} id={gato.id} key={index} imagen={gato.photos[0].medium}/> 
+                })}
+                <Link to="/adoption">Ver más gatitos</Link>
+                </>)  : <H1>Cargando gatitos...</H1>}
+                
             </MainPage>
         </>
     )
