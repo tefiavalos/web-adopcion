@@ -4,6 +4,21 @@ import Button from './Button';
 
 const DIV = styled.div`
 color: white;
+font-family: 'Baloo Tamma 2';
+margin-left: 10px;
+display: flex;
+flex-direction: column;
+align-items: center;
+.imagen{
+width: 20%;
+}
+form{
+  display:flex;
+  flex-direction: column;
+  button{
+    margin: 10px;
+  }
+}
 `
 
 const Details = (props) => {
@@ -76,14 +91,14 @@ console.log(gatoSeleccionado)
         <div className="catDetail">
           <h1>{gatoSeleccionado.name}</h1>
           <hr></hr>
-          <img className="" alt="foto de gatito" src={gatoSeleccionado.photos[0].small}></img>
+          <img className="imagen" alt="foto de gatito" src={gatoSeleccionado.photos[0].small}></img>
           <hr></hr>
           <p>{gatoSeleccionado.breeds.primary}</p>
           <p>{gatoSeleccionado.age + " - " + gatoSeleccionado.gender + " - " + gatoSeleccionado.size + " - " 
           + gatoSeleccionado.colors.primary + "-" + (gatoSeleccionado.colors.secondary != null ? gatoSeleccionado.colors.secondary : "")} </p>
           <p>{gatoSeleccionado.description}</p>
         </div>
-        : <h1>Obteniendo información del gatito</h1>}
+        : <h1>Obteniendo información del gatito...</h1>}
       <h1>Comunicate con el refugio</h1>
       <form onSubmit={handleSubmit}>
         <label htmlFor="fullName">Nombre y Apellido</label>

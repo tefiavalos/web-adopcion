@@ -10,6 +10,8 @@ color: #eee;
 font-family: 'Baloo Tamma 2';
 align-items: center;
 form{
+  display: flex;
+  flex-direction: column;
   input{
     margin: 20px;
   }
