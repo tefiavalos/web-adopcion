@@ -25,8 +25,17 @@ h1{
     color: #eee;
 }
 `
+
 const MainPage = styled.div`
 display:flex;
+flex-wrap: wrap;
+.linkVerMas {
+        background-color: #555;
+        text-decoration:none;
+        width: 150px;
+        height: 50px;
+        color: #fff;
+}
 `
 const H1 = styled.h1`
 color: #eee;
@@ -46,9 +55,9 @@ const Home = ({ gatitosFiltrados }) => {
                 {gatitosFiltrados.length !== 0 ? (
                 <>
                 {gatitosFiltrados.map((gato, index) => {
-                    return <Card textoBoton={gato.name} id={gato.id} key={index} imagen={gato.photos[0].medium}/> 
+                    return <Card textoBoton={gato.name} id={gato.id} key={index} imagen={gato.photos[0].full}/> 
                 })}
-                <Link to="/adoption">Ver más gatitos</Link>
+                <Link className="linkVerMas" to="/adoption">Ver más gatitos</Link>
                 </>)  : <H1>Cargando gatitos...</H1>}
                 
             </MainPage>
