@@ -94,9 +94,12 @@ console.log(gatoSeleccionado)
           <img className="imagen" alt="foto de gatito" src={gatoSeleccionado.photos[0].small}></img>
           <hr></hr>
           <p>{gatoSeleccionado.breeds.primary}</p>
-          <p>{gatoSeleccionado.age + " - " + gatoSeleccionado.gender + " - " + gatoSeleccionado.size + " - " 
-          + gatoSeleccionado.colors.primary + "-" + (gatoSeleccionado.colors.secondary != null ? gatoSeleccionado.colors.secondary : "")} </p>
-          <p>{gatoSeleccionado.description}</p>
+          <span> Edad: {gatoSeleccionado.age} </span>
+          <span> Sexo: {gatoSeleccionado.gender} </span> 
+          <span> Tamaño: {gatoSeleccionado.size} </span>
+          <p> Colores: {gatoSeleccionado.colors.primary + " - " +
+(gatoSeleccionado.colors.secondary != null ? gatoSeleccionado.colors.secondary : "")} </p>
+          <span>{gatoSeleccionado.description}</span>
         </div>
         : <h1>Obteniendo información del gatito...</h1>}
       <h1>Comunicate con el refugio</h1>

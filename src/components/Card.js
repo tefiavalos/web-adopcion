@@ -44,7 +44,7 @@ const Card = (props) => {
 
     return (
         <CardStyle>
-            <Link className="link" to={`/details/${props.id}`}>
+            <Link className="link" to={props.link}>
                 <div className="imgCard"><img src={props.imagen} alt=""></img></div>
                 <div>
                     <span>{props.textoBoton}</span>

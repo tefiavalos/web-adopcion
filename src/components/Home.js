@@ -3,6 +3,7 @@ import img from '../assets/ipa4.jpg';
 import styled from 'styled-components';
 import Card from './Card';
 import imgArticle from '../assets/fondo.jpg';
+import Huella from '../assets/huella.png'
 import { Link } from 'react-router-dom';
 
 const HomePage = styled.section`
@@ -33,7 +34,10 @@ flex-wrap: wrap;
         background-color: #555;
         text-decoration:none;
         width: 150px;
-        height: 50px;
+        height: 20px;
+        border-radius: 5px;
+        padding: 5px;
+        text-align: center;
         color: #fff;
 }
 `
@@ -53,13 +57,13 @@ const Home = ({ gatitosFiltrados }) => {
             </HomePage>
             <MainPage>
                 {gatitosFiltrados.length !== 0 ? (
-                <>
-                {gatitosFiltrados.map((gato, index) => {
-                    return <Card textoBoton={gato.name} id={gato.id} key={index} imagen={gato.photos[0].full}/> 
-                })}
-                <Link className="linkVerMas" to="/adoption">Ver más gatitos</Link>
-                </>)  : <H1>Cargando gatitos...</H1>}
-                
+                    <>
+                        {gatitosFiltrados.map((gato, index) => {
+                            return <Card textoBoton={gato.name} key={index} imagen={gato.photos[0].full} link={`/details/${gato.id}`}/>
+                        })}
+                        {/* <Link className="linkVerMas" to="/adoption">Ver más gatitos</Link> */}
+                        <Card className="linkVerMas" textoBoton={'Ver mas gatitos...'} imagen={Huella}  link={`/adoption`} />
+                    </>) : <H1>Cargando gatitos...</H1>}
             </MainPage>
         </>
     )

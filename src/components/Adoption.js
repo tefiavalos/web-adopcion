@@ -22,7 +22,9 @@ form{
 
 const DivCard = styled.div`
 display: flex;
-flex-direction: row;
+flex-wrap: wrap;
+justify-content: center;
+
 `
 
 const Adoption = ({ gatos }) => {
@@ -51,6 +53,7 @@ const Adoption = ({ gatos }) => {
   }
 
   return (
+    <>
     <AdoptionStyle>
       <h1>Animales disponibles para adoptar cerca tuyo</h1>
       <form onSubmit={handleSubmit}>
@@ -64,22 +67,24 @@ const Adoption = ({ gatos }) => {
         </div>
         <Button boton="Buscar"/>
       </form>
+    </AdoptionStyle>
+
+<DivCard className="divcard">
       {gatosBuscados.length !== 0 ? gatosBuscados.map((gato, index) => {
         return (
-          <DivCard className="divcard" key={index}>
           <Card
-            id={gato.id}
             textoBoton={gato.name}
             infoGato={gato}
             key={index}
             imagen={gato.photos[0].medium}
+            link={`/details/${gato.id}`}
           />
-          </DivCard>
         )
+        
       }) : <h1>Busca tu gatito de preferencia</h1>}
+  </DivCard>
 
-    </AdoptionStyle>
-  )
+</>)
 }
 
 export default Adoption;
