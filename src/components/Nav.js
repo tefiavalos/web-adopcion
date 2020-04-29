@@ -14,15 +14,16 @@ box-shadow: -webkit-box-shadow: inset -2px -1px 46px -13px rgba(71,66,66,1);
 -moz-box-shadow: inset -2px -1px 46px -13px rgba(71,66,66,1);
 box-shadow: inset -2px -1px 46px -13px rgba(71,66,66,1);
     .link{
-    text-decoration:none;
-    color: #eee;
-}
-    h1{
-        margin:0;
-        font-family: 'Baloo Tamma 2';
-        font-size: 20px;
-        padding-right: 40%;
+        text-decoration:none;
         color: #eee;
+        font-size: 13px;
+}
+    .logo{
+        text-decoration:none;
+        color: #eee;
+        font-size: 20px;
+        font-weight: 700;
+        padding-right: 45%
     }
 `
 
@@ -30,7 +31,7 @@ box-shadow: inset -2px -1px 46px -13px rgba(71,66,66,1);
 const Nav = () => {
     return (
         <NavSection>
-            <Link className="link" to="/">IpaLoca</Link>
+            <Link className="logo" to="/">IpaLoca</Link>
             <Link className="link" to="/">Home</Link>
             <Link className="link" to="/adoption">Adoption</Link>
         </NavSection>

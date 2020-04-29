@@ -30,7 +30,7 @@ h1{
 
 const MainPage = styled.div`
 display:flex;
-justify-content: space-between;
+justify-content: space-around;
 flex-wrap: wrap;
 font-family: 'Baloo Tamma 2';
 .linkVerMas {

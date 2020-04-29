@@ -28,7 +28,7 @@ const H1 = styled.h1`
 const DivCard = styled.div`
 display: flex;
 flex-wrap: wrap;
-justify-content: space-between;
+justify-content: space-around;
 
 `
 
@@ -81,7 +81,7 @@ const Adoption = ({ gatos }) => {
             textoBoton={gato.name}
             infoGato={gato}
             key={index}
-            imagen={gato.photos[0].medium}
+            imagen={gato.photos[0].large}
             link={`/details/${gato.id}`}
           />
         )

@@ -9,6 +9,9 @@ margin-left: 10px;
 display: flex;
 flex-direction: column;
 align-items: center;
+.catDetail{
+  width: 50%
+}
 .imagen{
 width: auto;
 height: auto;
@@ -26,8 +29,7 @@ const Details = (props) => {
 
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [gatoSeleccionado, setGatoSeleccionado] = useState(null)
+  const [gatoSeleccionado, setGatoSeleccionado] = useState(null);
 
   useEffect(() => {
 
@@ -68,7 +70,7 @@ const Details = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Se envió un mail al refugio");
+    alert(`Hola ${fullName[0].toUpperCase()+fullName.slice(1)} ya mandamos un mail a ${email} con más información sobre ${gatoSeleccionado.name}`);
   }
 
   const handleChangeFullName = (e) => {
@@ -81,10 +83,7 @@ const Details = (props) => {
     setEmail(e.target.value);
   }
 
-  const handleChangePhone = (e) => {
-    e.preventDefault();
-    setPhone(e.target.value);
-  }
+  
 console.log(gatoSeleccionado)
   return (
     <DIV>
@@ -95,25 +94,21 @@ console.log(gatoSeleccionado)
           <img className="imagen" alt="foto de gatito" src={gatoSeleccionado.photos[0].medium}></img>
           <hr></hr>
           <p>{gatoSeleccionado.breeds.primary}</p>
-          <span> Edad: {gatoSeleccionado.age} </span>
-          <span> Sexo: {gatoSeleccionado.gender} </span> 
-          <span> Tamaño: {gatoSeleccionado.size} </span>
-          <p> Colores: {gatoSeleccionado.colors.primary + " - " +
+          <p> Edad: {gatoSeleccionado.age} </p>
+          <p> Sexo: {gatoSeleccionado.gender} </p> 
+          <p> Tamaño: {gatoSeleccionado.size} </p>
+          <p> Colores: {(gatoSeleccionado.colors.primary != null ? gatoSeleccionado.colors.primary : "Información no disponible") + " - " +
 (gatoSeleccionado.colors.secondary != null ? gatoSeleccionado.colors.secondary : "")} </p>
-          <span>{gatoSeleccionado.description}</span>
+          <p>{gatoSeleccionado.description}</p>
         </div>
         : <h1>Obteniendo información del gatito...</h1>}
       <h1>Comunicate con el refugio</h1>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="fullName">Nombre y Apellido</label>
+        <label htmlFor="fullName">Nombre</label>
         <input name="fullName" id="fullName" onChange={handleChangeFullName} value={fullName}></input>
 
         <label htmlFor="email">Email</label>
         <input name="email" id="email" onChange={handleChangeEmail} value={email}></input>
-
-        <label htmlFor="phone">Telefono</label>
-        <input name="phone" id="phone" onChange={handleChangePhone} value={phone}></input>
-
         <Button boton="Enviar"/>
       </form>
 

@@ -41,6 +41,22 @@ img{
 p{
     font-size: 15px;
 }
+
+:hover{
+    font-family: 'Baloo Tamma 2';
+    font-weight: 600;
+    width: 350px;
+    height: 300px;
+    border-radius: 15px;
+    background-color: #eee;
+    display: flex;
+    justify-content: center; 
+    padding-top: 15px;
+    p{
+        color: #555;
+    }
+  }
+  
 `
 
 const Card = (props) => {
@@ -48,7 +64,7 @@ const Card = (props) => {
     return (
         <CardStyle>
             <Link className="link" to={props.link}>
-                <div className="imgCard"><img src={props.imagen} alt=""></img></div>            
+                <div className="imgCard"><img className="center" src={props.imagen} alt=""></img></div>            
                 <p>{props.textoBoton}</p>
             </Link>
         </CardStyle>
