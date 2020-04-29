@@ -18,12 +18,17 @@ form{
 }
 `
 
+const H1 = styled.h1`
+  color: #eee;
+  font-family: 'Baloo Tamma 2';
+  `
+
 
 
 const DivCard = styled.div`
 display: flex;
 flex-wrap: wrap;
-justify-content: center;
+justify-content: space-between;
 
 `
 
@@ -81,7 +86,7 @@ const Adoption = ({ gatos }) => {
           />
         )
         
-      }) : <h1>Busca tu gatito de preferencia</h1>}
+      }) : <H1>Busca tu gatito de preferencia...</H1>}
   </DivCard>
 
 </>)

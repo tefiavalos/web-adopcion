@@ -11,6 +11,7 @@ display: flex;
 background-image: url(${imgArticle});
 color: #eee;
 font-family: 'Baloo Tamma 2';
+padding-bottom: 30px;
 imgArticle{
     width:50%;
 }
@@ -29,7 +30,9 @@ h1{
 
 const MainPage = styled.div`
 display:flex;
+justify-content: space-between;
 flex-wrap: wrap;
+font-family: 'Baloo Tamma 2';
 .linkVerMas {
         background-color: #555;
         text-decoration:none;
@@ -55,6 +58,7 @@ const Home = ({ gatitosFiltrados }) => {
                 por una pareja. Hoy el unico recuerdo de ese mal momento es el colmillo que le queda afuera por
             tener la mandibula fracturada.</p></article>
             </HomePage>
+            <hr></hr>
             <MainPage>
                 {gatitosFiltrados.length !== 0 ? (
                     <>

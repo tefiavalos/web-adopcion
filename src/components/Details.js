@@ -10,7 +10,8 @@ display: flex;
 flex-direction: column;
 align-items: center;
 .imagen{
-width: 20%;
+width: auto;
+height: auto;
 }
 form{
   display:flex;
@@ -91,7 +92,7 @@ console.log(gatoSeleccionado)
         <div className="catDetail">
           <h1>{gatoSeleccionado.name}</h1>
           <hr></hr>
-          <img className="imagen" alt="foto de gatito" src={gatoSeleccionado.photos[0].small}></img>
+          <img className="imagen" alt="foto de gatito" src={gatoSeleccionado.photos[0].medium}></img>
           <hr></hr>
           <p>{gatoSeleccionado.breeds.primary}</p>
           <span> Edad: {gatoSeleccionado.age} </span>
