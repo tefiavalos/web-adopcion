@@ -56,7 +56,8 @@ const Home = ({ gatitosFiltrados }) => {
                 <article><p>Ipa es una gatita rescatada. Fue rescatada por dos personas que vieron como la tiraban
                 desde un auto adentro de una bolsa. Le dieron lugar, la cuidaron, y finalmente fue adoptada
                 por una pareja. Hoy el unico recuerdo de ese mal momento es el colmillo que le queda afuera por
-            tener la mandibula fracturada.</p></article>
+                tener la mandibula fracturada. Ella quiere que todos los gatitos tengan la misma oportunidad que ella.
+                Te invitamos a ver los gatitos adoptables.</p></article>
             </HomePage>
             <hr></hr>
             <MainPage>
