@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+// Mismas observaciones que en el estilado de Home. 
 const CardStyle = styled.div`
 font-family: 'Baloo Tamma 2';
 font-weight: 600;
@@ -42,6 +43,7 @@ p{
     font-size: 15px;
 }
 
+/* Se repite mucho codigo innecesariamente en este hover (width, height, etc*/
 :hover{
     font-family: 'Baloo Tamma 2';
     font-weight: 600;
@@ -60,10 +62,11 @@ p{
 `
 
 const Card = (props) => {
-
+// Privilegien destructurar props siempre que se pueda
     return (
         <CardStyle>
             <Link className="link" to={props.link}>
+            {/* Privilegien cerrar <img /> en una sola etiqueta */}
                 <div className="imgCard"><img className="center" src={props.imagen} alt=""></img></div>            
                 <p>{props.textoBoton}</p>
             </Link>

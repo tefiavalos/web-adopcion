@@ -3,6 +3,8 @@ import Card from './Card';
 import styled from 'styled-components';
 import Button from './Button';
 
+// Mismas observaciones al estilado que en Home. 
+
 const AdoptionStyle = styled.section`
 display:flex;
 flex-direction: column;
@@ -33,12 +35,34 @@ justify-content: space-around;
 `
 
 const Adoption = ({ gatos }) => {
+
+  // Dado que "sexo" y "age" siempre se usarán juntos, 
+  // yo preferiría que fueran propiedades del mismo objeto. 
+  // Es decir, algo como
+  // const [busqueda, setbusqueda] = useState({
+  //   sexo: '',
+  //   age: 0
+  // })
+  // Por otro lado, traten de no usar spanglish en el codigo:
+  // o todas las propiedades en ingles, o todas en español. 
+
   const [sexo, setSexo] = useState('');
   const [age, setAge] = useState(0);
   const [gatosBuscados, setGatosBuscados] = useState(gatos);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // traten de hacer estas funciones sin return a menos que sea
+    // absolutamente necesario
+
+    // es decir, 
+    // let busquedaGatos = gatos.filter(element => element.gender === sexo && element.age === age);
+    // Si les molesta porque queda muy larga horizontalmente (a mi tambien me molesta)
+    // usen parentesis para retornar en una nueva linea sin tener que escribir return:
+    // let busquedaGatos = gatos.filter(element => (
+    //   element.gender === sexo && element.age === age
+    // );
 
     let busquedaGatos = gatos.filter(element => {
       return element.gender === sexo && element.age === age;
@@ -47,6 +71,8 @@ const Adoption = ({ gatos }) => {
     setGatosBuscados(busquedaGatos);
   }
 
+  // Tener la busqueda del gato en un solo objeto, como
+  // les recomendé más arriba, evitaría tener estas dos funciones tan repetitivas. 
   const handleChangeSex = (e) => {
     e.preventDefault();
     setSexo(e.target.value);
@@ -74,6 +100,9 @@ const Adoption = ({ gatos }) => {
       </form>
     </AdoptionStyle>
 
+{/* Privilegien nombres mas descriptivos, como "resultadosBusqueda" a "divcard" 
+Por otro lado, el className no es necesario aqui
+*/}
 <DivCard className="divcard">
       {gatosBuscados.length !== 0 ? gatosBuscados.map((gato, index) => {
         return (

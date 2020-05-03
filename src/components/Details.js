@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Button from './Button';
 
+// Mismas observaciones que en el estilado de Home. 
 const DIV = styled.div`
 color: white;
 font-family: 'Baloo Tamma 2';
@@ -27,11 +28,18 @@ form{
 
 const Details = (props) => {
 
+  // De la misma manera que les comente en Adoption, 
+  // yo aqui usaria un objeto con la propiedad fullName e email, 
+  // en lugar de dos variables distintas. 
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [gatoSeleccionado, setGatoSeleccionado] = useState(null);
 
   useEffect(() => {
+
+    // La primera parte de este useEffect es igual a la de la Home. 
+    // Piensen como podrian hacer para no tener que repetirlo
+    // (Por ejemplo, poniendo la variable "data" en un archivo aparte, e importarlo)
 
     // Armamos el objeto con la información que pide el endpoint de la generación del token. Los datos
     // lo sacamos de la información de la página y Pieri obtuvo la info de client_id  client_
@@ -61,6 +69,7 @@ const Details = (props) => {
         })
           .then(res => res.json())
           .then(data => {
+            // recuerden nunca dejar console.log en un trabajo entregado
             console.log("TEST")
             console.log(data)
             setGatoSeleccionado(data.animal);
@@ -70,6 +79,7 @@ const Details = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // Si mandamos el form vacio esto rompe
     alert(`Hola ${fullName[0].toUpperCase()+fullName.slice(1)} ya mandamos un mail a ${email} con más información sobre ${gatoSeleccionado.name}`);
   }
 
@@ -83,10 +93,15 @@ const Details = (props) => {
     setEmail(e.target.value);
   }
 
-  
+  // ಠ_ಠ
 console.log(gatoSeleccionado)
+
+// Este componente esta algo desprolijo: yo le agregaria dos sub-componentes
+// Uno para la tarjeta del gato (que deberia ser un section o article, no un div)
+// y otro para el formulario. 
   return (
     <DIV>
+    {/* {!gatoSeleccionado ?  seria mejor */}
       {gatoSeleccionado != null ?
         <div className="catDetail">
           <h1>{gatoSeleccionado.name}</h1>
