@@ -1,11 +1,8 @@
 ### Comentarios
 
-En primer lugar felicitarlas, ya que hicieron un excelente trabajo. Me gusta mucho que hayan tomado 
-una idea original, que hayan pensado el diseño ustedes y que hayan logrado cumplir las consignas
-usando sus propias ideas. 
+En primer lugar felicitarlas, ya que hicieron un excelente trabajo. Me gusta mucho que hayan tomado una idea original, que hayan pensado el diseño ustedes y que hayan logrado cumplir las consignas usando sus propias ideas. 
 
-El trabajo está por supuesto aprobadísimo, y todas las observaciones que vienen a continuación 
-son simplemente para mejorar lo que ya hicieron. 
+El trabajo está por supuesto aprobadísimo, y todas las observaciones que vienen a continuación son simplemente para mejorar lo que ya hicieron. 
 
 - Es imperioso que hagan que esta web sea responsive. Hoy por hoy, la mayoría de las personas que les vean la página van a hacerlo desde sus celulares, y queremos que se lleven la mejor impresión posible. Para la página principal, yo plantearía poner la foto de Ipa arriba, el texto descriptivo debajo, y las tarjetas apiladas una debajo de la otra usando la mayor parte del espacio horizontal. La sección de adopción no necesita muchos arreglos, salvo por el centrado del título. 
 
