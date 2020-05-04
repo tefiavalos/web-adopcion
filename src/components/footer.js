@@ -8,6 +8,7 @@ const FooterStyled = styled.div`
 display: flex;
 justify-content: space-around;
 width: 100%;
+flex-wrap: wrap;
 padding: 2% 0;
 background-color: black;
 font-family: 'Baloo Tamma 2';
@@ -18,6 +19,7 @@ box-shadow: -webkit-box-shadow: inset -2px -1px 46px -13px rgba(71,66,66,1);
 box-shadow: inset -2px -1px 46px -13px rgba(71,66,66,1);
 img{
     width: 50px;
+    height: 50px;
 }
 .link{
     padding-top: 10px;
