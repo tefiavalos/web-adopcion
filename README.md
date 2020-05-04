@@ -1,6 +1,6 @@
 Web de Adopción hecha por:
 Noelia Donato (nsdonato)
 Pierina Francia (pierifrancia)
-Estefania avalos (tefiavalos)
+Estefania Avalos (tefiavalos)
 
-web-adopcion-gatites.now.sh (versión para desktop)
+https://web-adopcion-gatites.now.sh (versión para desktop)
