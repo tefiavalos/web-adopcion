@@ -13,12 +13,13 @@ background-color: #555;
 display: flex;
 justify-content: center; 
 padding-top: 15px;
+margin-top: 50px;
 h1{
     font-family: 'Baloo Tamma 2';
     font-weight: 600;
     color: #eee;
 }
-margin-top: 50px;
+
 .link{
     text-decoration:none;
     color: #eee;
@@ -55,8 +56,25 @@ p{
     p{
         color: #555;
     }
-  }
-  
+    @media(max-width:960px){
+        width: 49%;
+    }
+    @media(max-width:768px){
+        width: 99%;
+    }
+}
+
+
+@media(max-width:960px){
+    width: 49%;
+}
+@media(max-width:768px){
+    width: 99%;
+}
+
+
+
+
 `
 
 const Card = (props) => {

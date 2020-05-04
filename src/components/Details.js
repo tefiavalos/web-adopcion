@@ -3,26 +3,42 @@ import styled from 'styled-components';
 import Button from './Button';
 
 const DIV = styled.div`
-color: white;
-font-family: 'Baloo Tamma 2';
-margin-left: 10px;
-display: flex;
-flex-direction: column;
-align-items: center;
-.catDetail{
-  width: 50%
-}
-.imagen{
-width: auto;
-height: auto;
-}
-form{
-  display:flex;
+  color: white;
+  font-family: 'Baloo Tamma 2';
+  margin-left: 10px;
+  display: flex;
   flex-direction: column;
-  button{
+  align-items: center;
+  .catDetail{
+    width: 50%
+    }
+  .imagen{
+    width: auto;
+    height: auto;
+    }
+  form{
+    display:flex;
+    flex-direction: column;
+   button{
     margin: 10px;
+    }
   }
-}
+
+@media(max-width:768px){
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 10px;
+  h1{
+    font-size: 12px;
+  }
+  .imagen {
+  width: 100%;
+  height: auto;
+  }
+  form{
+   
+  }
 `
 
 const Details = (props) => {
@@ -33,14 +49,13 @@ const Details = (props) => {
 
   useEffect(() => {
 
-    // Armamos el objeto con la información que pide el endpoint de la generación del token. Los datos
-    // lo sacamos de la información de la página y Pieri obtuvo la info de client_id  client_
+    
     let data = {
       grant_type: "client_credentials",
       client_id: "ulGkNV7DwLchu4pT5ez9smmhYcGxsgYkxtbA9qWqVPoopzbsPK",
       client_secret: "BhpgVIJenmGKV1VpU2M42Fr88aECxIwK8uRvHLQW"
     }
-    // Obtenemos el token necesario para poder llamar a la api y obtener lo gatos.
+    
     fetch(`https://api.petfinder.com/v2/oauth2/token`, {
       method: 'POST',
       headers: {
@@ -61,8 +76,6 @@ const Details = (props) => {
         })
           .then(res => res.json())
           .then(data => {
-            console.log("TEST")
-            console.log(data)
             setGatoSeleccionado(data.animal);
           })
       })
@@ -70,7 +83,10 @@ const Details = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Hola ${fullName[0].toUpperCase()+fullName.slice(1)} ya mandamos un mail a ${email} con más información sobre ${gatoSeleccionado.name}`);
+    alert(fullName[0] != undefined && email != undefined ?
+    `Hola ${fullName[0].toUpperCase()+fullName.slice(1)} ya mandamos un mail a 
+    ${email} con más información sobre 
+    ${gatoSeleccionado.name}` : "debes ingresar un nombre y mail correctos");
   }
 
   const handleChangeFullName = (e) => {
@@ -84,7 +100,7 @@ const Details = (props) => {
   }
 
   
-console.log(gatoSeleccionado)
+
   return (
     <DIV>
       {gatoSeleccionado != null ?

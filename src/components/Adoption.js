@@ -16,11 +16,24 @@ form{
     margin: 20px;
   }
 }
+
+
 `
 
 const H1 = styled.h1`
   color: #eee;
   font-family: 'Baloo Tamma 2';
+  display:flex;
+flex-direction: column;
+color: #eee;
+font-family: 'Baloo Tamma 2';
+align-items: center;
+
+@media(max-width:960px){
+  h1{
+  text-align: center;
+  }
+}
   `
 
 
@@ -60,7 +73,7 @@ const Adoption = ({ gatos }) => {
   return (
     <>
     <AdoptionStyle>
-      <h1>Animales disponibles para adoptar cerca tuyo</h1>
+      <H1>Animales disponibles para adoptar cerca tuyo</H1>
       <form onSubmit={handleSubmit}>
         <div className="sexo" onChange={handleChangeSex}>
           <input type="radio" name="sexo" value="Female" />Femenino

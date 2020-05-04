@@ -26,6 +26,21 @@ h1{
     font-weight: 600;
     color: #eee;
 }
+
+@media(max-width:960px){
+display: flex;
+flex-direction: column;
+img {
+width: 100%;
+height: auto;
+}
+article{
+    display: flex;
+    width: 90%;
+    align-items: center;
+    text-align: left;
+}
+}
 `
 
 const MainPage = styled.div`

@@ -5,8 +5,9 @@ import styled from 'styled-components';
 
 const NavSection = styled.nav`
 display: flex;
-justify-content: space-between;
-padding: 2%;
+justify-content: space-around;
+width: 100%;
+padding: 2% 0;
 background-image: url(${img});
 font-family: 'Baloo Tamma 2';
 font-weight: 600;
@@ -24,6 +25,25 @@ box-shadow: inset -2px -1px 46px -13px rgba(71,66,66,1);
         font-size: 20px;
         font-weight: 700;
         padding-right: 45%
+    }
+
+
+    @media(max-width:768px){
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        padding: 10px 0;
+        margin: 0;
+        .link{
+            font-size: 10px;
+            margin: 0;
+            padding: 0;
+        }
+        .logo{
+            font-size: 12px;
+            padding: 0;
+            margin: 0;
+        }
     }
 `
 
