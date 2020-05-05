@@ -14,9 +14,10 @@ function App() {
   useEffect(() => {
     let data = {
       grant_type: "client_credentials",
-      client_id: "ulGkNV7DwLchu4pT5ez9smmhYcGxsgYkxtbA9qWqVPoopzbsPK",
-      client_secret: "BhpgVIJenmGKV1VpU2M42Fr88aECxIwK8uRvHLQW"
+      client_id: process.env.REACT_APP_API_KEY_SECRET,
+      client_secret: process.env.REACT_APP_API_KEY
     }
+ 
     fetch(`https://api.petfinder.com/v2/oauth2/token`, {
       method: 'POST',
       headers: {
